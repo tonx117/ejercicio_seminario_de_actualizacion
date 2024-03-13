@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HALLO EVERYNYAN</title>
+    <style>
+      #mensajeError {
+        color: red;
+        background-color: yellow;
+        display: none;
+        padding: 5px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hallo Everynyan</h1>
+
+    <input type="text" id="cajaTexto" oninput="verificarTexto()" />
+    <button onclick="mostrarAlerta()">Verificar</button>
+    <br />
+    <br />
+    <label id="mensajeError">Cargue algo por favor.</label>
+
+    <script>
+      function verificarTexto() {
+        var texto = document.getElementById("cajaTexto").value.trim();
+        var mensajeError = document.getElementById("mensajeError");
+        if (texto === "") {
+          mensajeError.style.display = "block";
+        } else {
+          mensajeError.style.display = "none";
+        }
+      }
+
+      function mostrarAlerta() {
+        var texto = document.getElementById("cajaTexto").value.trim();
+        if (texto !== "") {
+          alert("Texto cargado: " + texto);
+          console.log("Texto cargado: " + texto);
+        } else {
+          mensajeError.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
